@@ -26,6 +26,6 @@ public class NewClass {
        
         HashMap<String,Integer> hm1=Util.calcularFrecuencias("AFTFTHSIKWOWWMWH");
         ArbolHuffman ab=new ArbolHuffman(hm1);
-        System.out.println(ab);
+        System.out.println(ab);      
     }
 }
