@@ -23,9 +23,9 @@ public class NewClass {
         hm.put("F", 2);
         hm.put("H", 5);
         hm.put("I", 1);
-       
-        HashMap<String,Integer> hm1=Util.calcularFrecuencias("AFTFTHSIKWOWWMWH");
+        hm.put("T", 3);
+        HashMap<String,Integer> hm1=Util.calcularFrecuencias("Avtgdbdusksoyiojjooiji");
         ArbolHuffman ab=new ArbolHuffman(hm1);
-        System.out.println(ab);      
+        System.out.println(ab);
     }
 }
