@@ -15,10 +15,10 @@ import java.util.PriorityQueue;
  */
 public class ArbolHuffman {
     private Nodo<Frecuencia> raiz;
-    private HashMap<String,Integer> hm;
+    
     public ArbolHuffman(HashMap<String,Integer> mapa) {
         raiz=null;
-        this.hm=mapa;
+        
         PriorityQueue<Nodo<Frecuencia>> pq=new PriorityQueue<>((Nodo<Frecuencia> f1,Nodo<Frecuencia> f2)-> f1.getData().getHertz()-f2.getData().getHertz() );
         for(Map.Entry<String,Integer> me:mapa.entrySet()){
             pq.offer(new Nodo(new Frecuencia(me.getKey(),me.getValue())));
@@ -40,7 +40,12 @@ public class ArbolHuffman {
     
      public HashMap<String,String> calcularCodigos (){
          HashMap<String,String> hss=new HashMap<>();
-         
+         String txt=code("",raiz);
+        String[] split = txt.split(" ");
+        for(int i=0;i<split.length;i++){
+             String[] split1 = split[i].split(":");
+             hss.put(split1[0],split1[1]);
+        }
          return hss;
      }
     public static String codificar(String texto, HashMap<String,String> mapa){
@@ -74,10 +79,15 @@ public class ArbolHuffman {
             }
         return s;
     }
-    private String code(Nodo<Frecuencia> n){
-        String s="";
-        return s;
+    private String code(String s,Nodo<Frecuencia> n){
+        if(n.getDer()==null &&n.getDer()==null){
+            return n.getData().getLetra()+":"+s+" ";
+        }
+        else{
+        return code(s+"0",n.getIzq())+code(s+"1",n.getDer());
+        }
     }
+    
     private static HashMap<String,String> reversar(HashMap<String,String> mapa){
         HashMap<String,String> hm=new HashMap<>();
         for(Map.Entry<String,String> e:mapa.entrySet()){

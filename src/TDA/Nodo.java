@@ -13,10 +13,10 @@ import java.util.Objects;
  */
 public class Nodo<E> {
     private E data;
-    private Nodo<E> izq,der,padre;
+    private Nodo<E> izq,der;
     public Nodo(E data){
         this.data=data;
-        this.izq=this.der=padre=null;
+        this.izq=this.der=null;
     }
 
     public E getData() {
@@ -43,12 +43,6 @@ public class Nodo<E> {
         this.der = der;
     }
 
-    public Nodo<E> getPadre() {
-        return padre;
-    }
-
-    public void setPadre(Nodo<E> padre) {
-        this.padre = padre;
-    }
+    
     
 }
