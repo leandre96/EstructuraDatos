@@ -5,8 +5,11 @@
  */
 package proyecto2edd;
 
+import TDA.ArbolHuffman;
 import TDA.Util;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.HashMap;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -59,8 +62,18 @@ public class MainFrame extends javax.swing.JFrame {
         });
 
         jButton1.setText("Codificar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("DeCodificar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Refresh");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -144,6 +157,27 @@ public class MainFrame extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         this.setVisible(false);// TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       String txt=Util.leerTexto(jTextField1.getText());
+       HashMap<String,Integer> hsi=Util.calcularFrecuencias(txt);
+       ArbolHuffman abh=new ArbolHuffman(hsi);
+       HashMap<String,String> hss=abh.calcularCodigos();
+       String nuevo=ArbolHuffman.codificar(txt, hss);
+       Util.guardarTexto(jTextField1.getText(), nuevo, hss);
+       // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String[] split = jTextField1.getText().split(" ");
+        String txt=Util.leerTexto(split[0]);
+        HashMap<String,String> hss=Util.leerMapa(split[1]);
+        String n=ArbolHuffman.decodificar(txt, hss);
+        Util.guardarTexto(split[0], n, hss);
+        File f=new File(split[1]);
+        System.out.println(f.delete());
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

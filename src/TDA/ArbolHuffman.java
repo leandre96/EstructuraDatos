@@ -41,7 +41,7 @@ public class ArbolHuffman {
      public HashMap<String,String> calcularCodigos (){
          HashMap<String,String> hss=new HashMap<>();
          String txt=code("",raiz);
-        String[] split = txt.split(" ");
+        String[] split = txt.split("¨");
         for(int i=0;i<split.length;i++){
              String[] split1 = split[i].split(":");
              hss.put(split1[0],split1[1]);
@@ -81,7 +81,7 @@ public class ArbolHuffman {
     }
     private String code(String s,Nodo<Frecuencia> n){
         if(n.getDer()==null &&n.getDer()==null){
-            return n.getData().getLetra()+":"+s+" ";
+            return n.getData().getLetra()+":"+s+"¨";
         }
         else{
         return code(s+"0",n.getIzq())+code(s+"1",n.getDer());

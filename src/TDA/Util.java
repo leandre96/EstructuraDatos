@@ -473,16 +473,19 @@ public class Util {
             escritor.write(texto);
             escritor.println();
             escritor.close();
+            File f=new File(nombreArchivo.substring(0,nombreArchivo.length()-4)+"_compress.txt");
             
-        
-            fichero=new FileWriter(nombreArchivo.substring(0,nombreArchivo.length()-4)+"_compress.txt");
-            escritor=new PrintWriter(fichero);
-            escritor.flush();
-             for (Map.Entry<String,String> e: mapa.entrySet()){
+                fichero=new FileWriter(f.getName());
+                escritor=new PrintWriter(fichero);
+                escritor.flush();
+                for (Map.Entry<String,String> e: mapa.entrySet()){
                  escritor.write(e.getKey()+"="+e.getValue());
                  escritor.println();
-             }
-            escritor.close();
+                }
+                escritor.close();
+            
+            
+            
             
         } catch (IOException ex) {
             Logger.getLogger(Util.class.getName()).log(Level.SEVERE, null, ex);
