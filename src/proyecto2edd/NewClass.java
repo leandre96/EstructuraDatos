@@ -31,6 +31,8 @@ public class NewClass {
         
         System.out.println(ab);
         System.out.println(ab.calcularCodigos());
+//        File f=new File("estu_compress.txt");
+//        f.delete();
 //        String txt=Util.leerTexto("estu.txt");
 //        HashMap<String,Integer> hm2=Util.calcularFrecuencias(txt);
 //        ArbolHuffman ab2=new ArbolHuffman(hm2);

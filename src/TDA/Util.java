@@ -467,15 +467,15 @@ public class Util {
         FileWriter fichero = null;
         PrintWriter escritor = null;
         try {
-            fichero=new FileWriter(nombreArchivo+".txt");
+            fichero=new FileWriter(nombreArchivo);
             escritor=new PrintWriter(fichero);
             escritor.flush();
             escritor.write(texto);
             escritor.println();
             escritor.close();
+            
         
-        
-            fichero=new FileWriter(nombreArchivo+"_compress.txt");
+            fichero=new FileWriter(nombreArchivo.substring(0,nombreArchivo.length()-4)+"_compress.txt");
             escritor=new PrintWriter(fichero);
             escritor.flush();
              for (Map.Entry<String,String> e: mapa.entrySet()){
