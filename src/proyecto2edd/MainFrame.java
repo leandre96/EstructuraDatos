@@ -175,6 +175,7 @@ public class MainFrame extends javax.swing.JFrame {
         String n=ArbolHuffman.decodificar(txt, hss);
         Util.guardarTexto(split[0], n, hss);
         File f=new File(split[1]);
+        System.out.println(split[1]);
         System.out.println(f.delete());
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
