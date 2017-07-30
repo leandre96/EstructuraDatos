@@ -7,6 +7,8 @@ package proyecto2edd;
 
 import TDA.ArbolHuffman;
 import TDA.Util;
+import java.io.File;
+import java.nio.file.Files;
 import java.util.HashMap;
 
 /**
@@ -35,9 +37,10 @@ public class NewClass {
 //        HashMap<String,String> hss=ab2.calcularCodigos();
 //        String nou=ArbolHuffman.codificar(txt, hss);
 //        Util.guardarTexto("estu", nou, hss);
-          String txt=Util.leerTexto("estu.txt");
-          HashMap<String,String> hss=Util.leerMapa("estu_compress.txt");
-          String n=ArbolHuffman.decodificar(txt, hss);
-          Util.guardarTexto("estu", n, hss);
+//          String txt=Util.leerTexto("estu.txt");
+//          HashMap<String,String> hss=Util.leerMapa("estu_compress.txt");
+//          String n=ArbolHuffman.decodificar(txt, hss);
+//          Util.guardarTexto("estu", n, hss);
+        
     }
 }
