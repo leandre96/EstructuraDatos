@@ -23,6 +23,7 @@ public class MainFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainFrame
      */
+    
     private static boolean type;
     public MainFrame(boolean t) {
         type=t;
@@ -160,7 +161,9 @@ public class MainFrame extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jFileChooser1ActionPerformed
-
+    public boolean getT(){
+        return type;
+    }
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         jTextField1.setText("");// TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -176,6 +179,8 @@ public class MainFrame extends javax.swing.JFrame {
        HashMap<String,String> hss=abh.calcularCodigos();
        String nuevo=ArbolHuffman.codificar(txt, hss);
        Util.guardarTexto(jTextField1.getText(), nuevo, hss);
+       
+       
        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -186,8 +191,9 @@ public class MainFrame extends javax.swing.JFrame {
         String n=ArbolHuffman.decodificar(txt, hss);
         Util.guardarTexto(split[0], n, hss);
         File f=new File(split[1]);
-        System.out.println(split[1]);
-        System.out.println(f.delete());
+        f.delete();
+        
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
