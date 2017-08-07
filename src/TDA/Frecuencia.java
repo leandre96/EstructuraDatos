@@ -5,12 +5,11 @@
  */
 package TDA;
 
-import java.util.Objects;
-
 /**
  *
  * @author User
  */
+
 public class Frecuencia {
     private String letra;
     private Integer hertz;
@@ -23,8 +22,6 @@ public class Frecuencia {
     public String getLetra() {
         return letra;
     }
-
-    
 
     @Override
     public boolean equals(Object obj) {
@@ -48,6 +45,4 @@ public class Frecuencia {
     public String toString() {
         return "{"  + letra + ", " + hertz + '}';
     }
-    
-    
 }

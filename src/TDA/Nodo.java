@@ -5,12 +5,11 @@
  */
 package TDA;
 
-import java.util.Objects;
-
 /**
  *
  * @author User
  */
+
 public class Nodo<E> {
     private E data;
     private Nodo<E> izq,der;
@@ -41,8 +40,5 @@ public class Nodo<E> {
 
     public void setDer(Nodo<E> der) {
         this.der = der;
-    }
-
-    
-    
+    }    
 }
